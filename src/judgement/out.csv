@@ -1,0 +1,7 @@
+case_id,subject,case_explain,total_hearings,judgement,date
+C001,Property Dispute,Dispute over ancestral property between two brothers in Puducherry.,5,Property divided equally between both parties.,3/15/2023
+C002,Accident Claim,Compensation case filed by victim of road accident against transport company.,7,Court orders ?5 lakh compensation to victim.,10/30/2022
+C003,Contract Breach,Software company sued vendor for breach of contract due to late delivery of services.,4,Vendor liable to pay penalty for breach.,1/11/2024
+C004,Loan Default,Bank filed a case for recovery of loan from borrower.,6,Borrower directed to repay loan in installments.,6/20/2024
+C005,Consumer Complaint,Customer filed case against electronics store for selling defective refrigerator.,3,Store ordered to replace item and pay damages.,11/12/2023
+C006,Employment Dispute,Employee challenged wrongful termination by private firm.,8,Termination set aside; employee reinstated.,4/25/2024
