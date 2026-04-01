@@ -1,0 +1,65 @@
+admin- admin@gmail.com-1212
+judge- 
+user
+
+user or judge - admin will approve- login
+login - metamask
+
+
+admin- case add 
+    userid
+    judgeid
+    casesubject
+    casecontent
+    contentpdf
+    contentsummarise
+    otheruser
+    judgement- pdf
+    judgementsummarise- 
+
+casehearing-
+    casedate
+    caseinfo
+    nexthearing date
+mail notification to user
+
+
+CREATE TABLE cases (
+    caseid INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    userid INTEGER NOT NULL,        -- who filed the case (user)
+    judgeid INTEGER,                -- assigned judge
+
+    casesubject VARCHAR(255) NOT NULL,
+    casecontent TEXT NOT NULL,
+
+    contentpdf TEXT,                -- case document PDF path
+    contentsummarise TEXT,          -- AI / manual summary
+
+    otheruser INTEGER,              -- opponent / respondent user id
+
+    judgementpdf TEXT,              -- judgement PDF
+    judgementsummarise TEXT,        -- judgement summary
+
+    status VARCHAR(50) DEFAULT 'OPEN',  -- OPEN / HEARING / CLOSED
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (userid) REFERENCES users(id),
+    FOREIGN KEY (judgeid) REFERENCES users(id),
+    FOREIGN KEY (otheruser) REFERENCES users(id)
+);
+CREATE TABLE casehearing (
+    casehearingid INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    caseid INTEGER NOT NULL,
+
+    casedate DATE NOT NULL,          -- current hearing date
+    caseinfo TEXT,                   -- hearing notes / remarks
+
+    nexthearingdate DATE,            -- next hearing date
+    hearingstatus VARCHAR(50) DEFAULT 'UPCOMING',  -- HEARING / COMPLETED
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (caseid) REFERENCES cases(caseid)
+);
